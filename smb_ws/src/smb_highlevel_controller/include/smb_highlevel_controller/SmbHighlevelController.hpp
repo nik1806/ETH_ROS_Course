@@ -2,6 +2,7 @@
 
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
+// #include <std_msgs/String.h>
 
 namespace smb_highlevel_controller {
 
@@ -16,6 +17,7 @@ public:
 	SmbHighlevelController(ros::NodeHandle& nodeHandle);
 
 	void scanCallback(const sensor_msgs::LaserScan& scan);
+	void getAllParameters();
 
 	/*!
 	 * Destructor.
@@ -25,6 +27,8 @@ public:
 private:
 	ros::NodeHandle nodeHandle_;
 	ros::Subscriber scansubscriber_; // private variable for subscriber
+	int queue_size_;
+	std::string topic_name_;
 };
 
 } /* namespace */
