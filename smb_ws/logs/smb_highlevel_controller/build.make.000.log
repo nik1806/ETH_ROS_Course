@@ -1,10 +1,5 @@
 [35m[1mScanning dependencies of target smb_highlevel_controller[0m
-[ 33%] [32mBuilding CXX object CMakeFiles/smb_highlevel_controller.dir/src/smb_highlevel_controller_node.cpp.o[0m
-[ 66%] [32mBuilding CXX object CMakeFiles/smb_highlevel_controller.dir/src/SmbHighlevelController.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/smb_highlevel_controller.dir/src/SmbHighlevelController.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/smb_highlevel_controller.dir/src/smb_highlevel_controller_node.cpp.o[0m
 [100%] [32m[1mLinking CXX executable /home/paliwal/Workspace/smb_ws/devel/.private/smb_highlevel_controller/lib/smb_highlevel_controller/smb_highlevel_controller[0m
-/usr/bin/ld: CMakeFiles/smb_highlevel_controller.dir/src/SmbHighlevelController.cpp.o: in function `smb_highlevel_controller::SmbHighlevelController::SmbHighlevelController(ros::NodeHandle&)':
-SmbHighlevelController.cpp:(.text+0x105): undefined reference to `smb_highlevel_controller::SmbHighlevelController::scanCallback(sensor_msgs::LaserScan_<std::allocator<void> > const&)'
-collect2: error: ld returned 1 exit status
-make[2]: *** [CMakeFiles/smb_highlevel_controller.dir/build.make:116: /home/paliwal/Workspace/smb_ws/devel/.private/smb_highlevel_controller/lib/smb_highlevel_controller/smb_highlevel_controller] Error 1
-make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/smb_highlevel_controller.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2
+[100%] Built target smb_highlevel_controller

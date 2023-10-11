@@ -16,6 +16,12 @@ sensor_msgs/LaserScan.h
 smb_highlevel_controller/SmbHighlevelController.hpp
 -
 
+/home/paliwal/Workspace/smb_ws/src/smb_highlevel_controller/src/smb_highlevel_controller_node.cpp
+ros/ros.h
+-
+smb_highlevel_controller/SmbHighlevelController.hpp
+/home/paliwal/Workspace/smb_ws/src/smb_highlevel_controller/src/smb_highlevel_controller/SmbHighlevelController.hpp
+
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h
 /opt/ros/noetic/include/ros/ros/forwards.h

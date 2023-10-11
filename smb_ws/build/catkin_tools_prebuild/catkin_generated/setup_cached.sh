@@ -8,7 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/paliwal/Workspace/smb_ws/devel/.private/catkin_tools_prebuild:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/usr/local/gcc-10.1.0/lib64:/usr/local/gcc-10.1.0/lib64:/usr/local/cuda/lib64:/usr/local/cuda/lib64'
+export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/usr/local/gcc-10.1.0/lib64:/usr/local/cuda/lib64'
 export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
 export PWD='/home/paliwal/Workspace/smb_ws/build/catkin_tools_prebuild'
 export ROSLISP_PACKAGE_DIRECTORIES="/home/paliwal/Workspace/smb_ws/devel/.private/catkin_tools_prebuild/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
