@@ -1,2 +1,4 @@
 topic_name: /scan
 queue_size: 10
+vel_x: 0.2
+p_gains: 0.5

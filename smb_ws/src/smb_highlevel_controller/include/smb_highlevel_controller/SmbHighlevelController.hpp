@@ -2,7 +2,7 @@
 
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
-// #include <std_msgs/String.h>
+#include <geometry_msgs/Twist.h>
 
 namespace smb_highlevel_controller {
 
@@ -29,6 +29,10 @@ private:
 	ros::Subscriber scansubscriber_; // private variable for subscriber
 	int queue_size_;
 	std::string topic_name_;
+	ros::Publisher pillar_publisher_;
+	geometry_msgs::Twist pillar_twist_;
+	float vel_x;
+	float p_gains;
 };
 
 } /* namespace */
