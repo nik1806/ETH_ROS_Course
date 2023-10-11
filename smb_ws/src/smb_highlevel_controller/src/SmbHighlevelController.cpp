@@ -5,7 +5,7 @@ namespace smb_highlevel_controller {
 void SmbHighlevelController::scanCallback(const sensor_msgs::LaserScan& scan){
 	// ROS_INFO_STREAM("Scan callback" << scan);
 
-	int min_range = -1;
+	int min_range = 10000;
 	int scan_len = scan.ranges.size();
 	for(int i = 0; i < scan_len; i++){
 		if(scan.ranges[i] < min_range){
