@@ -8,7 +8,8 @@
       "includePath": [
         "/opt/ros/noetic/include/**",
         "/home/paliwal/Workspace/smb_ws/src/smb_common/smb_gazebo/include/**",
-        "/usr/include/**"
+        "/usr/include/**",
+        "/opt/ros/noetic/include/"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",

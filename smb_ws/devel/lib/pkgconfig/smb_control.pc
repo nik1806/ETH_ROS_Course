@@ -1,1 +1,0 @@
-/home/paliwal/Workspace/smb_ws/devel/.private/smb_control/lib/pkgconfig/smb_control.pc
