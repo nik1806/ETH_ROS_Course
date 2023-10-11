@@ -4,8 +4,8 @@
         <arg name="laser_enabled" value="true" />
     </include>
 
-    <!-- <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
-    </node> -->
+    <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+    </node>
 
     <node name="smb_highlevel_controller" pkg="smb_highlevel_controller" type="smb_highlevel_controller" output="screen" launch-prefix="gnome-terminal --command">
         <rosparam command="load" file="$(find smb_highlevel_controller)/config/config.yaml" />
