@@ -1,0 +1,50 @@
+<launch>
+    <param name="/use_sim_time" value="true"/>
+    
+    <include file="$(find smb_gazebo)/launch/smb_gazebo.launch">
+        <arg name="world_file" value="$(find smb_highlevel_controller)/worlds/singlePillar.world" />
+        <arg name="laser_enabled" value="true" />
+        <arg name="laser_scan_min_height" value="-0.2" />
+        <arg name="laser_scan_max_height" value="1.0" />
+    </include>
+
+    <node name="smb_highlevel_controller" pkg="smb_highlevel_controller" type="smb_highlevel_controller" output="screen" launch-prefix="gnome-terminal --command">
+        <rosparam command="load" file="$(find smb_highlevel_controller)/config/config.yaml" />
+    </node>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" >
+        <rosparam command="load" file="$(find smb_control)/config/localization.yaml" />
+        <param name="publish_frequency" value="50"/>
+        <param name="use_tf_static"     value="true"/>
+        <remap from="robot_description" to="robot_description"/>
+    </node>
+    
+    <!--
+    <node name="ekf_localization_node" pkg="robot_localization" type="ekf_localization_node" output="screen" >
+        <rosparam command="load" file="$(find smb_control)/config/localization.yaml" />
+    </node>
+    -->
+
+    <node name="ekf_localization_node" pkg="robot_localization" type="ekf_localization_node" output="screen">
+        <rosparam command="load" file="$(find smb_control)/config/localization.yaml" />
+    
+        <!-- Add your configuration parameters for EKF node here -->
+
+        <!-- Remap topics from bag file to EKF inputs -->
+        <remap from="/imu/data" to="/imu/data"/>
+        <remap from="/joint_states" to="/joint_states"/>
+        <remap from="/rslidar_points" to="/lidar_points"/>
+        <remap from="/smb_velocity_controller/odom" to="/odom"/>
+
+        <!-- Add more remappings as needed for your use case -->
+    </node>
+    
+    <node name="player" pkg="rosbag" type="play" args="--clock $(find smb_highlevel_controller)/smb_navigation.bag"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_highlevel_controller)/config/rvizconfig.rviz"/>
+
+    <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" output="screen"
+        args="/odometry/filtered"
+    />
+
+</launch>
